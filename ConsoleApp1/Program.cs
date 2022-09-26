@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,7 +11,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Kata.BitsWar(new List<int> { 1, 5, 12 });
+            Kata.BitsWar(new List<int> { 7, -3, 20 });
         }
     }
 
@@ -23,62 +24,50 @@ namespace ConsoleApp1
             int sum_odd = 0;
             int sum_even = 0;
             string res = "";
-            for(int i = 0; i < numbers.Count; i++)
-            {
-                if(numbers[i]%2 == 0)
-                {
-                    even.Add(numbers[i]);
-                }
-                else
-                {
-                    odd.Add(numbers[i]);
-                }
-            }
-            for(int i = 0; i < odd.Count; i++)
-            {
-                if(odd[i]<0)
-                {
-                    odd[i] = Convert.ToInt32(Convert.ToString(odd[i], 2)) * (-1);
-                }
-                else
-                {
-                    odd[i] = Convert.ToInt32(Convert.ToString(odd[i], 2));
-                }
-                
-            }
-            for (int i = 0; i < even.Count; i++)
-            {
-                if (even[i]<0)
-                {
-                    even[i] = Convert.ToInt32(Convert.ToString(even[i], 2)) * (-1);
-                }
-                else
-                {
-                    even[i] = Convert.ToInt32(Convert.ToString(even[i], 2));
-                }
-                
-            }
-            for(int i = 0; i < odd.Count; i++)
-            {
-                sum_odd += odd[i];
-            }
-            for(int i = 0; i < even.Count; i++)
-            {
-                sum_even+=even[i];
-            }
+
+            odd = numbers.FindAll(x => x % 2 != 0);
+            even = numbers.FindAll(x => x % 2 == 0);
+
+            countOnes(ref odd);
+            countOnes(ref even);
+
+            sum_odd = odd.Sum();
+            sum_even = even.Sum();
+
             if(sum_odd > sum_even)
             {
-                res+="odds win";
+                res = "odds win";
             }
             else if(sum_odd < sum_even)
             {
-                res+= "evens win";
+                res = "evens win";
             }
             else
             {
-                res += "tie";
+                res = "tie";
             }
             return res;
+        }
+        static void countOnes(ref List<int> list)
+        {
+            for (int i = 0; i < list.Count; i++)
+            {
+                int a = list[i];
+                string str;
+                if (a >= 0)
+                {
+                    str = Convert.ToString(a, 2);
+                    a = str.Count(x => x == '1');
+                }
+                else
+                {
+                    a = Math.Abs(a);
+                    str = Convert.ToString(a, 2);
+                    a = str.Count(x => x == '1');
+                    a = -a;
+                }
+                list[i] = a;
+            }
         }
     }
 }
