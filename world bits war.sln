@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32516.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "world bits war", "world bits war\world bits war.csproj", "{834C7FBA-4DCF-4F56-AF1C-D0AA0EA5705B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{BD451340-4A46-4C2C-B89E-A0A4D408997C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{834C7FBA-4DCF-4F56-AF1C-D0AA0EA5705B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{834C7FBA-4DCF-4F56-AF1C-D0AA0EA5705B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{834C7FBA-4DCF-4F56-AF1C-D0AA0EA5705B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{834C7FBA-4DCF-4F56-AF1C-D0AA0EA5705B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD451340-4A46-4C2C-B89E-A0A4D408997C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD451340-4A46-4C2C-B89E-A0A4D408997C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD451340-4A46-4C2C-B89E-A0A4D408997C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD451340-4A46-4C2C-B89E-A0A4D408997C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE36D7D3-721C-4F4B-8D14-64EF7AC5DB1E}
+	EndGlobalSection
+EndGlobal
